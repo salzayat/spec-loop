@@ -60,7 +60,7 @@ Open the single governing spec for your task instead of scanning them all. Each 
 | `repository-documentation`      | Repository intent, authority boundaries, `AGENTS.md`, and orientation guidance.  |
 | `repository-planning`           | Roadmap sequencing, OpenSpec dependency declarations, and readiness evidence.    |
 | `workflow-governance`           | Executable PR automation and pre-merge dependency-readiness checks.              |
-| `agentic-boiler-governance`     | Canonical agent harness layout, bounded MCP access, CI parity, and roadmap sync. |
+| `spec-loop-governance`          | Canonical agent harness layout, bounded MCP access, CI parity, and roadmap sync. |
 | `ci-governance`                 | How Dependabot updates pass quality gates without weakening human-change checks. |
 | `agent-attribution`             | Neutral role labels and no provider or marketing branding in produced content.   |
 | `public-repository-maintenance` | Public metadata, ownership, support, security, and publication safeguards.       |
