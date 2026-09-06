@@ -9,7 +9,7 @@ Usage:
 
 Required:
   --type TYPE        Commit type: feat, fix, docs, test, refactor, chore, ci
-  --scope SCOPE      Commit scope, for example repo, databento, openspec
+  --scope SCOPE      Commit scope, for example repo, greeter, openspec
   --message SUMMARY  Commit summary without the type/scope prefix
   --branch BRANCH    PR branch to create or reuse
 

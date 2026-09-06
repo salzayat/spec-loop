@@ -24,4 +24,13 @@ for skill in .agent/skills/*; do
   grep -q '^name:' "$skill/SKILL.md" || fail "$skill/SKILL.md is missing skill front matter"
 done
 
+# OpenCode-native adapter files cannot be symlinks to the canonical skills because their frontmatter
+# format differs. They are sanctioned adapters only when explicitly verified: each must be git-tracked
+# and carry frontmatter, so no unverified or divergent content can sit in an adapter directory unnoticed.
+for adapter in .opencode/commands/*.md .opencode/agents/*.md; do
+  [ -e "$adapter" ] || continue
+  git ls-files --error-unmatch "$adapter" >/dev/null 2>&1 || fail "$adapter must be tracked to be a verified adapter"
+  grep -Eq '^(description|name|argument-hint):' "$adapter" || fail "$adapter is missing adapter front matter"
+done
+
 printf '%s\n' "Agent harness check passed"

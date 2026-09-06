@@ -21,7 +21,7 @@ Workflow:
 4. If the user supplied explicit `scripts/pr.sh` flags in `$ARGUMENTS`, preserve them unless they would commit secrets, generated data, or the wrong files.
 5. If required flags are missing, infer safe values from the session and diff when possible:
    - `--type`: one of `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `ci`
-   - `--scope`: concise repo area, for example `repo`, `governance`, `databento`, `openspec`
+   - `--scope`: concise repo area, for example `repo`, `governance`, `greeter`, `openspec`
    - `--message`: imperative summary based on the actual changes
    - `--branch`: kebab-case branch name based on the message
 6. Ask one concise question if the intended files or PR base branch are ambiguous.

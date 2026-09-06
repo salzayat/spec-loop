@@ -38,10 +38,12 @@ over features that imitate a production system without a real use case.
 
 ## Nx Conventions
 
-- For workspace exploration, use the `nx-workspace` skill and `npm exec nx show ...` commands.
+Generic Nx task guidance (prefer `nx` over underlying tooling, prefix the package manager, use `nx_docs`
+instead of guessing flags, invoke the `nx-workspace` skill for exploration) lives in the auto-managed
+"General Guidelines for working with Nx" block below; do not restate it here. This section carries only
+the repo-specific rules:
+
 - For scaffolding or project structure changes, use the `nx-generate` skill first and prefer Nx generators.
-- Run project work through Nx targets: `npm exec nx run <project>:<target>` or `npm exec nx run-many -t ...`.
-- Use `nx_docs` for advanced or unfamiliar Nx configuration and flags; do not guess CLI options.
 - Preserve explicit `lint`, `typecheck`, `test`, and `build` targets for every project.
 
 ## Verification
