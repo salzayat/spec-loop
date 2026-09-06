@@ -1,16 +1,16 @@
 {
-  "name": "@agentic-boiler/greeter",
+  "name": "@spec-loop/greeter",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
     ".": {
-      "@agentic-boiler/source": "./src/index.ts",
+      "@spec-loop/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
   "dependencies": {
-    "@agentic-boiler/hello": "*"
+    "@spec-loop/hello": "*"
   }
 }

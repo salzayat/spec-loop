@@ -83,12 +83,12 @@ project rather than contributing to this one; it is a one-time rename/replace/ve
 the agent loop below.
 
 `packages/greeter` is the worked example of a dependent package. It imports `hello`'s typed export via
-`@agentic-boiler/hello`, declared as both an npm workspace dependency and an Nx `implicitDependencies`
-entry. That import resolves at typecheck and test time through the `@agentic-boiler/source` package export
+`@spec-loop/hello`, declared as both an npm workspace dependency and an Nx `implicitDependencies`
+entry. That import resolves at typecheck and test time through the `@spec-loop/source` package export
 condition, so no build step is required.
 
 When adding a new package that depends on another, follow the same shape: a `package.json` with a matching
-`exports` map, a `project.json` with `implicitDependencies`, and a `node --conditions=@agentic-boiler/source`
+`exports` map, a `project.json` with `implicitDependencies`, and a `node --conditions=@spec-loop/source`
 test target.
 
 Use [`docs/dependency-patterns.md`](dependency-patterns.md) when adding roadmap entries, declaring OpenSpec

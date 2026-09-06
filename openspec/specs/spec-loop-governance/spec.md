@@ -1,4 +1,4 @@
-# agentic-boiler-governance Specification
+# spec-loop-governance Specification
 
 ## Purpose
 

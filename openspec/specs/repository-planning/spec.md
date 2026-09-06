@@ -57,7 +57,7 @@ example code, run the verification gate, then propose their first domain OpenSpe
 #### Scenario: Fork owner follows the guide to a verified, renamed project
 
 - **WHEN** a contributor forks the repository and follows `TEMPLATE.md` in order
-- **THEN** `package.json` and `README.md` no longer reference `agentic-boiler` or `salzayat/agentic-boiler`
+- **THEN** `package.json` and `README.md` no longer reference `spec-loop` or `salzayat/spec-loop`
 - **AND** no tracked file under `packages/` contains a `TEMPLATE:REPLACE` marker
 - **AND** `npm run check` passes
 

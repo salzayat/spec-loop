@@ -1,4 +1,4 @@
-name: agentic-boiler
+name: spec-loop
 version: 1
 schema: spec-driven
 artifact_dir: changes

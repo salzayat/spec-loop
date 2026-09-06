@@ -1,11 +1,11 @@
 {
-  "name": "@agentic-boiler/hello",
+  "name": "@spec-loop/hello",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
     ".": {
-      "@agentic-boiler/source": "./src/index.ts",
+      "@spec-loop/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }

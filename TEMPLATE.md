@@ -6,16 +6,24 @@ ongoing change workflow you'll use afterward.
 
 ## 1. Rename the identity strings
 
-This project's name and repository are hard-coded in a few places. Update each of these before anything
-else, so later commands, `npm install`, and generated links refer to your project instead of this one:
+This project's name, npm scope, and repository owner are baked into more places than a fork owner should
+have to hunt down by hand: `package.json`, every `packages/*/package.json`, `tsconfig.base.json`'s custom
+condition, `openspec/config.yaml`, the live OpenSpec capability directory, and several docs. Run the
+rename command instead of editing them one at a time:
 
-| File           | Field(s)                                           | Current value                                        |
-| -------------- | -------------------------------------------------- | ---------------------------------------------------- |
-| `package.json` | `name`                                             | `agentic-boiler`                                     |
-| `package.json` | `repository.url`                                   | `git+https://github.com/salzayat/agentic-boiler.git` |
-| `package.json` | `bugs.url`                                         | `https://github.com/salzayat/agentic-boiler/issues`  |
-| `package.json` | `homepage`                                         | `https://github.com/salzayat/agentic-boiler#readme`  |
-| `README.md`    | Title (`# Agentic Boiler`) and opening description | —                                                    |
+```bash
+npm run rename -- <new-name>
+```
+
+`<new-name>` must be lowercase kebab-case (e.g. `my-project`). The command reads your current name and
+owner from `package.json`, rewrites every tracked file and file/directory name that references them, and
+finishes by running `npm install` to regenerate `package-lock.json` — so a broken rename fails immediately
+instead of surfacing later as a confusing build error. Pass `--owner <owner>`, `--title <title>`, or
+`--description <description>` to change those too; run `npm run rename -- --help` for the full option
+list. The command refuses to run on a dirty git worktree and is safe to re-run.
+
+`README.md`'s title and opening description aren't identity strings the command can infer generically —
+update those by hand to describe your actual project.
 
 ## 2. Replace the teaching examples
 
@@ -53,3 +61,19 @@ for the full agent loop: propose, validate, implement the smallest contract-cove
 
 From here, [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/governance.md`](docs/governance.md) govern how
 work proceeds.
+
+## Tracking upstream template updates
+
+To keep pulling improvements from this template after you've renamed and started your own project, add it
+as a second remote:
+
+```bash
+git remote add upstream https://github.com/salzayat/spec-loop.git
+git fetch upstream
+git merge upstream/main
+```
+
+Because `npm run rename` only rewrites real identity strings (no placeholder round-trip), an upstream merge
+conflicts only on the specific lines the rename touched — file names and content mentioning the old
+project name, npm scope, or owner. Resolve those conflicts by keeping your fork's renamed value; everything
+else merges cleanly.

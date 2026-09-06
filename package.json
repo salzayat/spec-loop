@@ -1,5 +1,5 @@
 {
-  "name": "agentic-boiler",
+  "name": "spec-loop",
   "version": "0.1.0",
   "license": "MIT",
   "packageManager": "npm@11.5.2",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/salzayat/agentic-boiler.git"
+    "url": "git+https://github.com/salzayat/spec-loop.git"
   },
   "bugs": {
-    "url": "https://github.com/salzayat/agentic-boiler/issues"
+    "url": "https://github.com/salzayat/spec-loop/issues"
   },
-  "homepage": "https://github.com/salzayat/agentic-boiler#readme",
+  "homepage": "https://github.com/salzayat/spec-loop#readme",
   "keywords": [
     "agents",
     "monorepo",
@@ -32,6 +32,7 @@
     "format:check": "prettier --check .",
     "graph": "nx graph",
     "lint": "nx run-many -t lint",
+    "rename": "./scripts/rename-project.sh",
     "test": "nx run-many -t test",
     "typecheck": "nx run-many -t typecheck"
   },

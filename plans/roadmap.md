@@ -13,6 +13,7 @@ contract.
 | Foundation                              |                                                               | Complete |
 | Agent harness and MCP governance        | `improve-agentic-boiler-governance`                           | Complete |
 | Template and example expansion          | `add-second-example-package`, `add-template-onboarding-guide` | Complete |
+| Fork rename automation                  | `add-project-rename-tooling`                                  | Complete |
 
 The repository evolution milestone comes first because it establishes the conventions used to plan and
 sequence every later capability. The executable PR and dependency governance milestone extends those
@@ -28,6 +29,12 @@ fork/rename/replace-markers checklist, so its predecessor had to exist and be ar
 "Template repository" setting was checked and was already enabled on the hosted remote, and `.github/`
 already carries PR/issue templates, CODEOWNERS, dependabot, and CI, so no further governing change is
 needed to finish this milestone.
+
+The fork rename automation milestone turns `TEMPLATE.md`'s manual identity-rename table into a single
+command (`npm run rename`), because the manual table was already missing several tracked locations (the
+npm scope, `tsconfig.base.json`, `openspec/config.yaml`, the `spec-loop-governance` spec directory)
+that a fork owner following it verbatim would leave inconsistent. It comes after the template and example
+expansion milestone because it renames the packages that milestone introduced.
 
 Roadmap changes are ordered left to right within a milestone and top to bottom across milestones. A later
 change may be selected only after every earlier governing change is archived and verified. Use `Pending` for

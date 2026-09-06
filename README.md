@@ -61,6 +61,10 @@ Install the local hooks once per clone:
 `npm run check` runs strict OpenSpec validation, agent-harness and roadmap checks, documentation and secret
 checks, then Nx formatting, linting, type checking, tests, and builds.
 
+Forking this to start your own project? After `npm ci`, run `npm run rename -- <your-project-name>` to
+rewrite every tracked identity string, npm scope, and file/directory name in one pass — see
+[`TEMPLATE.md`](TEMPLATE.md) for the full one-time setup path.
+
 ## Key Commands
 
 The repository keeps its common engineering actions executable and visible:
