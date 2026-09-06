@@ -42,9 +42,9 @@ else
   printf '%s\n' "gitleaks not found; falling back to a narrow secret pattern check. Install gitleaks for full coverage: https://github.com/gitleaks/gitleaks#installing" >&2
 
   if [ -n "$diff_range" ]; then
-    secret_matches=$(git diff --text --name-only -G'(DATABENTO_API_KEY|API_KEY|SECRET|TOKEN|PASSWORD)\s*=\s*["'"''][^"'"'']{8,}' "$diff_range" -- $files)
+    secret_matches=$(git diff --text --name-only -G'(API_KEY|SECRET|TOKEN|PASSWORD)[[:space:]]*=[[:space:]]*["'"''][^"'"'']{8,}' "$diff_range" -- $files)
   else
-    secret_matches=$(git diff --cached --text --name-only -G'(DATABENTO_API_KEY|API_KEY|SECRET|TOKEN|PASSWORD)\s*=\s*["'"''][^"'"'']{8,}' -- $files)
+    secret_matches=$(git diff --cached --text --name-only -G'(API_KEY|SECRET|TOKEN|PASSWORD)[[:space:]]*=[[:space:]]*["'"''][^"'"'']{8,}' -- $files)
   fi
 
   if [ -n "$secret_matches" ]; then

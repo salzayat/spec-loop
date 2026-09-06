@@ -43,7 +43,7 @@ Good examples:
 ```text
 chore(repo): add guarded pull request automation
 docs(governance): document commit and pr workflow
-feat(databento): plan one-year es seed requests
+feat(greeter): compose greeting from the hello package
 ```
 
 Bad examples:

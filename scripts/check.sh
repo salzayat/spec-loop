@@ -11,6 +11,7 @@ npm exec openspec -- validate --all --strict
 ./scripts/check-docs.sh
 ./scripts/check-secrets.sh
 npm run format:check
+./scripts/check-workspace-links.sh
 npm run typecheck
 npm run lint
 npm run test

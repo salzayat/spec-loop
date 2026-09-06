@@ -49,6 +49,22 @@ this page is guidance, not a replacement for those contracts.
 When prose and a contract disagree, update the governing OpenSpec artifact before implementation. Do not
 put domain behavior in scripts, reports, agent prompts, or presentation code.
 
+## Accepted Specification Index
+
+Open the single governing spec for your task instead of scanning them all. Each lives at
+`openspec/specs/<capability>/spec.md`.
+
+| Capability                      | Scope                                                                            |
+| ------------------------------- | -------------------------------------------------------------------------------- |
+| `repository-foundation`         | The small, deterministic Nx starting point and its example packages.             |
+| `repository-documentation`      | Repository intent, authority boundaries, `AGENTS.md`, and orientation guidance.  |
+| `repository-planning`           | Roadmap sequencing, OpenSpec dependency declarations, and readiness evidence.    |
+| `workflow-governance`           | Executable PR automation and pre-merge dependency-readiness checks.              |
+| `spec-loop-governance`          | Canonical agent harness layout, bounded MCP access, CI parity, and roadmap sync. |
+| `ci-governance`                 | How Dependabot updates pass quality gates without weakening human-change checks. |
+| `agent-attribution`             | Neutral role labels and no provider or marketing branding in produced content.   |
+| `public-repository-maintenance` | Public metadata, ownership, support, security, and publication safeguards.       |
+
 ## Agent Loop
 
 1. Read `AGENTS.md`, the relevant accepted spec, and the current implementation.
