@@ -25,8 +25,10 @@ Workflow:
    - `--message`: imperative summary based on the actual changes
    - `--branch`: kebab-case branch name based on the message
 6. Ask one concise question if the intended files or PR base branch are ambiguous.
-7. Run `./scripts/pr.sh` with either explicit file paths after `--` or `--all` only when the user clearly wants all current changes included.
-8. Ensure the script stays on the PR branch until `gh pr create` completes.
-9. Report the PR URL and confirm the final branch after the script completes.
+7. If the current branch (from step 2) is already a feature branch, not `main`, pass that branch to
+   `--branch` with `--reuse-branch` so the script continues on it instead of requiring a fresh one.
+8. Run `./scripts/pr.sh` with either explicit file paths after `--` or `--all` only when the user clearly wants all current changes included.
+9. Ensure the script stays on the PR branch until `gh pr create` completes.
+10. Report the PR URL and confirm the final branch after the script completes.
 
 Do not commit, push, or create a PR unless the user explicitly requested PR automation in this command invocation. Do not use `--skip-checks` unless the user explicitly requested it or a documented local tooling outage blocks checks.

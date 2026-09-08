@@ -7,6 +7,10 @@ description: Use when creating commits or pull requests with scripts/pr.sh, /pr,
 
 Use this skill when the user asks to create a commit, push a branch, open a pull request, run `/pr`, or automate PR creation. The OpenCode command name is exactly `/pr`; do not require a dotted command name, namespace, or extra prefix.
 
+Implementation for a pull request should already be happening on a feature branch, created before file
+changes began — not on `main`. If a branch already exists when this skill runs, pass `--reuse-branch` so
+the script continues on it instead of requiring a fresh one.
+
 ## Source Of Truth
 
 Use `scripts/pr.sh` for execution. Do not hand-roll a separate Git/GitHub workflow unless the script is missing or broken and the user approves a fallback.

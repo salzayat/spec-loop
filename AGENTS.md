@@ -83,9 +83,12 @@ agent loop, harness adapters, and MCP boundary.
 
 ## Pull Requests
 
-Use the repository PR template and `scripts/pr.sh` when explicitly asked to create a PR. Before doing so,
-inspect status, the complete diff, recent commits, remote tracking, OpenSpec tasks, and verification output.
-Do not commit directly to `main`, force-push, or include unrelated worktree changes.
+Create and switch to a feature branch before making file changes intended for a pull request, not only
+before running `scripts/pr.sh` — implementation should never sit as uncommitted work on `main`. Use the
+repository PR template and `scripts/pr.sh` when explicitly asked to create a PR; pass `--reuse-branch` when
+the branch already exists. Before doing so, inspect status, the complete diff, recent commits, remote
+tracking, OpenSpec tasks, and verification output. Do not commit directly to `main`, force-push, or include
+unrelated worktree changes. `.githooks/pre-commit` rejects a local commit made while `main` is checked out.
 
 <!-- nx configuration start-->
 <!-- Leave the start & end comments to automatically receive updates. -->
