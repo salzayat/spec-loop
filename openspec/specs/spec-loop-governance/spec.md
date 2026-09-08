@@ -15,7 +15,9 @@ equivalent explicitly verified adapter, rather than copied content. An adapter f
 symlink because its target agent uses a different frontmatter format (such as OpenCode-native command or
 agent files) MUST be verified by the harness check: the check MUST fail when such a file is untracked or
 lacks required frontmatter, so no unverified or divergent content can sit in an adapter directory
-unnoticed.
+unnoticed. A skill's `description:` frontmatter field, which loads into every agent session regardless of
+whether the skill is invoked, MUST state only trigger conditions and scope; it MUST NOT restate rationale
+or elaboration that the skill's body already carries.
 
 #### Scenario: Verify shared harness topology
 
@@ -29,6 +31,15 @@ unnoticed.
   `.opencode/agents/`
 - **WHEN** the harness check runs
 - **THEN** the check fails unless that file is tracked and carries valid frontmatter
+
+#### Scenario: Skill description carries scope, not rationale
+
+- **GIVEN** a skill's `description:` field contains a sentence explaining why the skill behaves as it does
+- **WHEN** that same explanation already appears in the skill's body
+- **THEN** removing the sentence from the description does not reduce which distinct requests trigger the
+  skill
+- **AND** the description retains every trigger phrase and scope statement needed to distinguish it from
+  other skills
 
 ### Requirement: Agent tools have bounded MCP access
 
