@@ -1,6 +1,6 @@
 ---
 name: openspec-change
-description: Scaffold a new OpenSpec change (proposal.md, design.md, tasks.md, specs/<capability>/spec.md) for this repo's spec-driven workflow. Use whenever the user wants to propose a new capability, fix a behavioral defect, or otherwise start work that should go through openspec/changes/ before code — including phrases like "draft an OpenSpec change for X", "propose a fix for Y as a spec", "create a change for Z", or when AGENTS.md's rule to spec before coding applies and no matching change exists yet. Grounds every claim in the proposal against the actual current codebase rather than assumption, and actively checks for the invariant, verifiability, and immutability mistakes that have shown up in this repo's own drafts before.
+description: Scaffold a new OpenSpec change (proposal.md, design.md, tasks.md, specs/<capability>/spec.md) for this repo's spec-driven workflow. Use whenever the user wants to propose a new capability, fix a behavioral defect, or otherwise start work that should go through openspec/changes/ before code — including phrases like "draft an OpenSpec change for X", "propose a fix for Y as a spec", "create a change for Z", or when AGENTS.md's rule to spec before coding applies and no matching change exists yet.
 ---
 
 # OpenSpec Change Scaffolding
