@@ -64,6 +64,20 @@ Open the single governing spec for your task instead of scanning them all. Each 
 | `ci-governance`                 | How Dependabot updates pass quality gates without weakening human-change checks. |
 | `agent-attribution`             | Neutral role labels and no provider or marketing branding in produced content.   |
 | `public-repository-maintenance` | Public metadata, ownership, support, security, and publication safeguards.       |
+| `template-rename-tooling`       | Renaming the template's identity strings when a fork adopts a new project name.  |
+
+## Resuming Work
+
+Before reading prior session context, the roadmap, or every active change's `tasks.md`, run:
+
+```bash
+./scripts/spec-status.sh
+```
+
+It reports each capability with an active OpenSpec change and that change's task completion, computed live
+from `openspec/changes/` and `openspec list --json` — nothing here is hand-maintained, so there is no
+separate progress document to go stale. Use its output to load only the one active change relevant to your
+task instead of the full session.
 
 ## Agent Loop
 
