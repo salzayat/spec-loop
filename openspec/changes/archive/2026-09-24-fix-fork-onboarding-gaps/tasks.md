@@ -67,4 +67,4 @@
 - [x] 7.5 `.githooks/pre-commit` refuses a commit on the detected default branch and allows one elsewhere.
 - [x] 7.6 `npm exec openspec -- validate fix-fork-onboarding-gaps --strict` passes.
 - [x] 7.7 `npm run check` and `./scripts/check-ci-only.sh` pass.
-- [ ] 7.8 Record the exact output of 7.7 in the pull request.
+- [x] 7.8 Record the exact output of 7.7 in the pull request.
